@@ -39,7 +39,7 @@ void part1(const char *file)
         // Doctor the line to remove trailing newline as it'll be detected as a symbol
         size_t line_len = strlen(line);
         line[line_len - 1] = '.';
-        printf("%s\n", line);
+        // printf("%s\n", line);
 
         for (int i = 0; i < MAX_LINE; i++)
         {
@@ -66,7 +66,7 @@ void part1(const char *file)
 
                 if (is_part)
                 {
-                    printf("part from current line: %d\n", num);
+                    // printf("part from current line: %d\n", num);
                     all_part_nums += num;
                 }
             }
@@ -95,7 +95,7 @@ void part1(const char *file)
                 if (part_start != -1)
                 {
                     int num = atoi(previous_line + part_start);
-                    printf("part from previous line: %d\n", num);
+                    // printf("part from previous line: %d\n", num);
                     all_part_nums += num;
 
                     // Edge case:
@@ -110,7 +110,7 @@ void part1(const char *file)
                     if (part_start == i + 1 && isdigit(previous_line[part_start]))
                     {
                         int num = atoi(previous_line + part_start);
-                        printf("part from previous line: %d\n", num);
+                        // printf("part from previous line: %d\n", num);
                         all_part_nums += num;
                     }
                 }
@@ -289,7 +289,6 @@ int process_line(const char *previous_line, const char *line, const char *next_l
 
         if (part_num1 != -1 && part_num2 != -1)
         {
-            printf("Found gear, %d / %d\n", part_num1, part_num2);
             result += part_num1 * part_num2;
         }
     }
@@ -329,7 +328,7 @@ void part2(const char *file)
         next_line[line_len - 1] = '.';
 
         int line_result = process_line(previous_line, line, next_line);
-        printf("%s    %d\n", line, line_result);
+        // printf("%s    %d\n", line, line_result);
         total_gear_ratios += line_result;
 
         char *temp = previous_line;
@@ -356,7 +355,7 @@ int main(int argc, const char **argv)
         return 1;
     }
 
-    // part1(argv[1]);
+    part1(argv[1]);
     part2(argv[1]);
 
     return 0;
