@@ -9,3 +9,4 @@ The running column assumes your working directory is the current day.
 | JavaScript (Node) | 15 minutes         | `node answer.js`              |
 | Awk (gawk)        | 28 minutes         | `awk -f answer.awk input.txt` |
 | C                 | 1 hour, 11 minutes | `make`                        |
+| Lua               | 26 minutes         | `lua answer.lua`              |
